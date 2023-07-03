@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"net/http"
 
 	"github.com/google/uuid"
 	"github.com/robfig/cron/v3"
@@ -23,5 +24,5 @@ func initCron() {
 
 func main() {
 	initCron()
-	fmt.Scanln()
+	http.ListenAndServe(":8000", nil)
 }
